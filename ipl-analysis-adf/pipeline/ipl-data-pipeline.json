@@ -18,7 +18,7 @@
 					"notebookPath": "/Repos/duraishanmugaraj.r@gmail.com/ipl-analysis-azure-databricks/process_load",
 					"baseParameters": {
 						"year": {
-							"value": "@variables('adf-year')",
+							"value": "@pipeline().parameters.adf_year",
 							"type": "Expression"
 						}
 					}
@@ -51,7 +51,7 @@
 					"notebookPath": "/Repos/duraishanmugaraj.r@gmail.com/ipl-analysis-azure-databricks/presentation_load",
 					"baseParameters": {
 						"year": {
-							"value": "@variables('adf-year')",
+							"value": "@pipeline().parameters.adf_year",
 							"type": "Expression"
 						}
 					}
