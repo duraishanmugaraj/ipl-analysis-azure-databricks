@@ -2,7 +2,7 @@
 	"name": "ipl_trigger",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "ipl-data-pipeline",
