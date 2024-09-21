@@ -7,9 +7,6 @@
 		},
 		"ipl_load_pipeline_properties_typeProperties_existingClusterId": {
 			"value": "0915-191217-jckbtnyt"
-		},
-		"ipl_trigger_properties_pipeline_parameters_adf_year": {
-			"value": "@trigger().outputs.windowStartTime"
 		}
 	}
 }

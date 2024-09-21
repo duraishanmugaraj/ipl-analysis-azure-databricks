@@ -10,10 +10,6 @@
 		"ipl_load_pipeline_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "0915-191217-jckbtnyt"
-		},
-		"ipl_trigger_properties_pipeline_parameters_adf_year": {
-			"type": "string",
-			"defaultValue": "@trigger().outputs.windowStartTime"
 		}
 	},
 	"variables": {
@@ -59,7 +55,7 @@
 							"notebookPath": "/Repos/duraishanmugaraj.r@gmail.com/ipl-analysis-azure-databricks/process_load",
 							"baseParameters": {
 								"year": {
-									"value": "@variables('adf-year')",
+									"value": "@pipeline().parameters.adf_year",
 									"type": "Expression"
 								}
 							}
@@ -92,7 +88,7 @@
 							"notebookPath": "/Repos/duraishanmugaraj.r@gmail.com/ipl-analysis-azure-databricks/presentation_load",
 							"baseParameters": {
 								"year": {
-									"value": "@variables('adf-year')",
+									"value": "@pipeline().parameters.adf_year",
 									"type": "Expression"
 								}
 							}
@@ -117,40 +113,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ipl_load_pipeline')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ipl_trigger')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "ipl-data-pipeline",
-						"type": "PipelineReference"
-					},
-					"parameters": {
-						"adf_year": "[parameters('ipl_trigger_properties_pipeline_parameters_adf_year')]"
-					}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Month",
-					"interval": 12,
-					"startTime": "2008-01-01T20:28:00Z",
-					"endTime": "2018-01-01T20:28:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 1,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": []
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/ipl-data-pipeline')]"
 			]
 		}
 	]

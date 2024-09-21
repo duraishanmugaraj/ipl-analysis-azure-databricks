@@ -11,10 +11,6 @@
 			"type": "string",
 			"defaultValue": "0915-191217-jckbtnyt"
 		},
-		"ipl_trigger_properties_pipeline_parameters_adf_year": {
-			"type": "string",
-			"defaultValue": "@trigger().outputs.windowStartTime"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -44,9 +40,6 @@
 					},
 					"ipl_load_pipeline_properties_typeProperties_existingClusterId": {
 						"value": "[parameters('ipl_load_pipeline_properties_typeProperties_existingClusterId')]"
-					},
-					"ipl_trigger_properties_pipeline_parameters_adf_year": {
-						"value": "[parameters('ipl_trigger_properties_pipeline_parameters_adf_year')]"
 					}
 				}
 			},
