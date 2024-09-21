@@ -62,10 +62,11 @@
 				}
 			}
 		],
-		"variables": {
-			"adf-year": {
-				"type": "String",
-				"defaultValue": "2009"
+		"concurrency": 1,
+		"parameters": {
+			"adf_year": {
+				"type": "string",
+				"defaultValue": "2008"
 			}
 		},
 		"annotations": []

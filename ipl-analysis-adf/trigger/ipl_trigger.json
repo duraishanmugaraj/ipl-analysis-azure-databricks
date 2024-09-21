@@ -3,12 +3,21 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Stopped",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "ipl-data-pipeline",
+				"type": "PipelineReference"
+			},
+			"parameters": {
+				"adf_year": "@trigger().outputs.windowStartTime"
+			}
+		},
 		"type": "TumblingWindowTrigger",
 		"typeProperties": {
 			"frequency": "Month",
 			"interval": 12,
 			"startTime": "2008-01-01T20:28:00Z",
-			"endTime": "2024-09-22T20:28:00Z",
+			"endTime": "2018-01-01T20:28:00Z",
 			"delay": "00:00:00",
 			"maxConcurrency": 1,
 			"retryPolicy": {
