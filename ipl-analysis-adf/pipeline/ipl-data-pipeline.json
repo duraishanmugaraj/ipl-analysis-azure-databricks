@@ -1,0 +1,39 @@
+{
+	"name": "ipl-data-pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "ipl-data-load",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"baseParameters": {
+						"year": {
+							"value": "@variables('adf-year')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ipl_load_pipeline",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"variables": {
+			"adf-year": {
+				"type": "String",
+				"defaultValue": "2009"
+			}
+		},
+		"annotations": []
+	}
+}
