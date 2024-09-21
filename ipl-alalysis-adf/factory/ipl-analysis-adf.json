@@ -1,0 +1,9 @@
+{
+	"name": "ipl-analysis-adf",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "89bde6d8-3f3b-4876-8601-c0e83b28ce22",
+		"tenantId": "f64cb0db-3764-49ad-88e5-053fccfd11f2"
+	}
+}
