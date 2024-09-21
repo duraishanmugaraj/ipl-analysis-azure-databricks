@@ -1,0 +1,14 @@
+{
+	"name": "ipl_load_pipeline",
+	"properties": {
+		"description": "ipl_load_pipeline",
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-2185313560766934.14.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/3eba4130-4cee-450d-95d2-8a7b3ac68937/resourceGroups/azure-databricks-rg/providers/Microsoft.Databricks/workspaces/azure-databricks-ws",
+			"existingClusterId": "0915-191217-jckbtnyt"
+		}
+	}
+}
